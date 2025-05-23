@@ -14,7 +14,7 @@ import CartSheet from "./cart-sheet";
 import Products from "./products";
 
 interface RestaurantCategoriesProps {
-  restaurant: Prisma.RestaurantGetPayload<{
+  restaurant: Prisma.StoreGetPayload<{
     include: {
       menuCategories: {
         include: { products: true };

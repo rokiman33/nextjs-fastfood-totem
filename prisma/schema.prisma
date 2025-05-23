@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Restaurant {
+model Store {
   id             String         @id @default(uuid())
   name           String
   slug           String
@@ -30,8 +30,8 @@ model Restaurant {
 model MenuCategory {
   id           String     @id @default(uuid())
   name         String
-  restaurant   Restaurant @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
-  restaurantId String
+  store        Store      @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  storeId      String
   createdAt    DateTime   @default(now())
   updateAt     DateTime   @updatedAt
   products     Product[]
@@ -44,8 +44,8 @@ model Product {
   price          Float
   imageUrl       String
   ingredients   String []
-  restaurant     Restaurant     @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
-  restaurantId   String
+  store          Store          @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  storeId        String
   menuCategory   MenuCategory   @relation(fields: [menuCategoryId], references: [id], onDelete: Cascade)
   menuCategoryId String
   orderProduct   OrderProduct[]
@@ -59,8 +59,8 @@ model Order {
   status            OrderStatus
   consumptionMethod ConsumptionMethod
   orderProduct      OrderProduct[]
-  restaurant        Restaurant        @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
-  restaurantId      String
+  store             Store             @relation(fields: [storeId], references: [id], onDelete: Cascade)
+  storeId           String
   customerName      String
   customerCpf       String
   createdAt         DateTime          @default(now())

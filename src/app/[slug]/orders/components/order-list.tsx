@@ -14,7 +14,7 @@ interface OrderListProps {
   orders: Array<
     Prisma.OrderGetPayload<{
       include: {
-        restaurant: {
+        store: {
           select: {
             name: true;
             avatarImageUrl: true;
@@ -65,13 +65,13 @@ const OrderList = ({ orders }: OrderListProps) => {
             <div className="flex items-center gap-2">
               <div className="relative h-5 w-5">
                 <Image
-                  src={order.restaurant.avatarImageUrl}
-                  alt={order.restaurant.name}
+                  src={order.store.avatarImageUrl}
+                  alt={order.store.name}
                   className="rounded-sm"
                   fill
                 />
               </div>
-              <p className="text-sm font-semibold">{order.restaurant.name}</p>
+              <p className="text-sm font-semibold">{order.store.name}</p>
             </div>
             <Separator />
             <div className="space-y-2">

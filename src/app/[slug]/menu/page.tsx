@@ -23,7 +23,7 @@ const RestaurantMenuPage = async ({
   if (!isConsumptionMethodValid(consumptionMethod)) {
     return notFound();
   }
-  const restaurant = await db.restaurant.findFirst({
+  const restaurant = await db.store.findFirst({
     where: { slug },
     include: {
       menuCategories: {
