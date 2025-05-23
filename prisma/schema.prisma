@@ -86,6 +86,6 @@ enum OrderStatus {
 }
 
 enum ConsumptionMethod {
-  TAKEWAY
-  DINE_IN
+  TAKE_OUT
+  EAT_HERE
 }

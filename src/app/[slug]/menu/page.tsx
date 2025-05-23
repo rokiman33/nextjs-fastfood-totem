@@ -11,7 +11,7 @@ interface RestaurantMenuPageProps {
 }
 
 const isConsumptionMethodValid = (consumptionMethod: string) => {
-  return ["DINE_IN", "TAKEWAY"].includes(consumptionMethod.toUpperCase());
+  return ["EAT_HERE", "TAKE_OUT"].includes(consumptionMethod.toUpperCase());
 };
 
 const RestaurantMenuPage = async ({
