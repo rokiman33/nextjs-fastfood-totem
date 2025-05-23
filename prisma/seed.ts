@@ -312,6 +312,85 @@ const main = async () => {
         },
       ],
     });
+    const clothingStore = await tx.restaurant.create({
+      data: {
+        name: "FSW Modas",
+        slug: "fsw-modas",
+        description: "Loja especializada em roupas e acessórios",
+        avatarImageUrl: "https://placehold.co/120x120",
+        coverImageUrl: "https://placehold.co/600x300",
+      },
+    });
+
+    const shirtsCategory = await tx.menuCategory.create({
+      data: {
+        name: "Camisas",
+        restaurantId: clothingStore.id,
+      },
+    });
+
+    await tx.product.createMany({
+      data: [
+        {
+          name: "Camiseta Básica",
+          description: "Modelo casual em algodão para o dia a dia",
+          ingredients: [],
+          price: 29.9,
+          imageUrl: "https://placehold.co/400x400?text=camiseta",
+          menuCategoryId: shirtsCategory.id,
+          restaurantId: clothingStore.id,
+        },
+        {
+          name: "Camisa Polo",
+          description: "Camisa polo clássica e confortável",
+          ingredients: [],
+          price: 49.9,
+          imageUrl: "https://placehold.co/400x400?text=polo",
+          menuCategoryId: shirtsCategory.id,
+          restaurantId: clothingStore.id,
+        },
+      ],
+    });
+
+    const securityStore = await tx.restaurant.create({
+      data: {
+        name: "FSW Segurança",
+        slug: "fsw-seguranca",
+        description: "Equipamentos para proteção individual",
+        avatarImageUrl: "https://placehold.co/120x120",
+        coverImageUrl: "https://placehold.co/600x300",
+      },
+    });
+
+    const safetyCategory = await tx.menuCategory.create({
+      data: {
+        name: "Equipos de seguridad",
+        restaurantId: securityStore.id,
+      },
+    });
+
+    await tx.product.createMany({
+      data: [
+        {
+          name: "Capacete de Proteção",
+          description: "Ideal para obras e ambientes industriais",
+          ingredients: [],
+          price: 79.9,
+          imageUrl: "https://placehold.co/400x400?text=capacete",
+          menuCategoryId: safetyCategory.id,
+          restaurantId: securityStore.id,
+        },
+        {
+          name: "Luva Anticorte",
+          description: "Proporciona segurança no manuseio de ferramentas",
+          ingredients: [],
+          price: 45.0,
+          imageUrl: "https://placehold.co/400x400?text=luva",
+          menuCategoryId: safetyCategory.id,
+          restaurantId: securityStore.id,
+        },
+      ],
+    });
   });
 };
 
