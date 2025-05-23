@@ -1,7 +1,7 @@
-# Fast Food Ordering Totem
+# Multi-Store Self-Service Kiosk
 
 ## 📌 Project Objective
-This project aims to create an application similar to a self-service kiosk for ordering food at fast food restaurants. The system allows customers to choose between placing an order for takeout or dining in, with an intuitive and easy-to-understand interface. Additionally, the system enables the registration of new restaurants, allowing each one to configure its own products and menus dynamically.
+This project aims to create an application similar to a self-service kiosk for ordering food, clothing, and safety items. The system now supports multiple store types, allowing customers to choose between placing an order for takeout or dining in through an intuitive interface. Additionally, each store can configure its own products and menus dynamically.
 
 ## 🔍 Project Phases
 
@@ -10,8 +10,8 @@ This project aims to create an application similar to a self-service kiosk for o
 - Relational database modeling using **Prisma ORM**.
 - Implementation of the cloud database with **Neon Serverless Postgres**.
 - Structuring tables to store information about:
-  - Restaurants
-  - Menu categories
+  - Stores
+  - Item categories
   - Available products
 
 ### 2️⃣ Main Interface Construction
@@ -36,7 +36,7 @@ The project was developed using modern and efficient technologies to ensure high
 - **Lucide React** – Vector icons for a more interactive and intuitive interface.
 
 ## 🚀 Conclusion
-This project showcases a modern front-end development approach with a strong focus on user experience and responsiveness. The combination of **shadcn/ui** and **Tailwind CSS** enables an elegant, adaptable, and easily manageable UI, ensuring seamless component manipulation. Additionally, the project emphasizes **mobile-first development**, optimizing the interface for an intuitive and smooth experience across different devices. The integration of **Next.js**, **Prisma**, and **Neon Serverless Postgres** further enhances scalability and performance, making the system highly efficient for expanding restaurant and product offerings.
+This project showcases a modern front-end development approach with a strong focus on user experience and responsiveness. The combination of **shadcn/ui** and **Tailwind CSS** enables an elegant, adaptable, and easily manageable UI, ensuring seamless component manipulation. Additionally, the project emphasizes **mobile-first development**, optimizing the interface for an intuitive and smooth experience across different devices. The integration of **Next.js**, **Prisma**, and **Neon Serverless Postgres** further enhances scalability and performance, making the system highly efficient for expanding store and product offerings.
 
 ---
 
