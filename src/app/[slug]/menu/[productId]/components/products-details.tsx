@@ -101,7 +101,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
 
             {/* ABOUT */}
             <div className="mt-6 space-y-3">
-              <h4 className="font-semibold">Sobre</h4>
+              <h4 className="font-semibold">Acerca de</h4>
               <p className="text-sm text-muted-foreground">
                 {product.description}
               </p>
@@ -123,7 +123,7 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
         </div>
 
         <Button className="w-full rounded-full" onClick={handleAddToCart}>
-          Adicionar à sacola
+          Agregar al carrito
         </Button>
       </div>
       <CartSheet />
