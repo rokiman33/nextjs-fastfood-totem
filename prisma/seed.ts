@@ -272,7 +272,7 @@ const main = async () => {
         },
       ],
     });
-    const desertsCategory = await tx.menuCategory.create({
+    const dessertsCategory = await tx.menuCategory.create({
       data: {
         name: "Sobremesas",
         restaurantId: restaurant.id,
@@ -287,7 +287,7 @@ const main = async () => {
           price: 3.9,
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQtfuQrAKkI75oJfPT0crZxvX82ui9qV3hLFdY",
-          menuCategoryId: desertsCategory.id,
+          menuCategoryId: dessertsCategory.id,
           restaurantId: restaurant.id,
         },
         {
@@ -297,7 +297,7 @@ const main = async () => {
           price: 3.9,
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQBH21ijzEVXRoycAtrP9vH45bZ6WDl3QF0a1M",
-          menuCategoryId: desertsCategory.id,
+          menuCategoryId: dessertsCategory.id,
           restaurantId: restaurant.id,
         },
         {
@@ -307,7 +307,7 @@ const main = async () => {
           price: 2.9,
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ4rBrtULypXmR6JiWuhzS8ALjVkrF3yfatC7E",
-          menuCategoryId: desertsCategory.id,
+          menuCategoryId: dessertsCategory.id,
           restaurantId: restaurant.id,
         },
       ],
