@@ -1,6 +1,6 @@
-# Totem de Comidas Rápidas
+# Totem de Autoservicio Multitienda
 
-Este proyecto fue creado con [Next.js](https://nextjs.org) usando [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Este proyecto fue creado con [Next.js](https://nextjs.org) usando [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app). Es una base para un kiosco de autoservicio que puede utilizarse en tiendas de comida, ropa y artículos de seguridad. El sistema ahora admite múltiples tipos de tiendas.
 
 ## Comenzando
 
