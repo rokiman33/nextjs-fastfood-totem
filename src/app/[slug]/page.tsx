@@ -29,25 +29,25 @@ const RestaurantPage = async ({ params }: RestaurantPageProps) => {
       </div>
       {/* BEM VINDO */}
       <div className="space-y-2 pt-24 text-center">
-        <h3 className="text-2xl font-semibold">Seja bem-vindo!</h3>
+        <h3 className="text-2xl font-semibold">¡Bienvenido!</h3>
         <p className="opacity-55">
-          Escolha como prefere aproveitar sua refeição. Estamos aqui para
-          oferecer praticidade e sabor em cada detalhe!
+          Elija cómo prefiere gestionar su compra. Estamos aquí para
+          ofrecer practicidad en cada detalle.
         </p>
       </div>
       <div className="grid grid-cols-2 gap-4 pt-14">
         <ConsumptionMethodOption
           slug={slug}
           option="DINE_IN"
-          buttonText="Para comer aqui"
-          imageAlt="Comer aqui"
+          buttonText="Para retirar aquí"
+          imageAlt="Retirar aquí"
           imageUrl="/dine_in.png"
         />
         <ConsumptionMethodOption
           slug={slug}
           option="TAKEWAY"
-          buttonText="Para levar"
-          imageAlt="Para levar"
+          buttonText="Para llevar"
+          imageAlt="Para llevar"
           imageUrl="/takeaway.png"
         />
       </div>
