@@ -20,7 +20,7 @@ interface CreateOrderInput {
 }
 
 export const createOrder = async (input: CreateOrderInput) => {
-  const restaurant = await db.restaurant.findFirst({
+  const restaurant = await db.store.findFirst({
     where: {
       slug: input.slug,
     },
@@ -56,7 +56,7 @@ export const createOrder = async (input: CreateOrderInput) => {
         0,
       ),
       consumptionMethod: input.consumptionMethod,
-      restaurantId: restaurant.id,
+      storeId: restaurant.id,
     },
   });
   revalidatePath(`/${input.slug}/orders`);

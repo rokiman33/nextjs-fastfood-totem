@@ -27,7 +27,7 @@ const OrdersPage = async ({ searchParams }: OrdersPageProps) => {
       customerCpf: removeCpfPunctuation(cpf),
     },
     include: {
-      restaurant: {
+      store: {
         select: {
           name: true,
           avatarImageUrl: true,

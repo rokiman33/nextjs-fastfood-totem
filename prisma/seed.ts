@@ -8,8 +8,8 @@ const prismaClient = new PrismaClient();
 
 const main = async () => {
   await prismaClient.$transaction(async (tx: any) => {
-    await tx.restaurant.deleteMany();
-    const restaurant = await tx.restaurant.create({
+    await tx.store.deleteMany();
+    const store = await tx.store.create({
       data: {
         name: "FSW Donalds",
         slug: "fsw-donalds",
@@ -23,7 +23,7 @@ const main = async () => {
     const combosCategory = await tx.menuCategory.create({
       data: {
         name: "Combos",
-        restaurantId: restaurant.id,
+        storeId: store.id,
       },
     });
     await tx.product.createMany({
@@ -36,7 +36,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQaHB8tslkBUjlHSKiuseLm2hIFzVY0OtxEPnw",
           menuCategoryId: combosCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
           ingredients: [
             "Pão com gergilim",
             "Hambúrguer de carne 100% bovina",
@@ -55,7 +55,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQeGQofnEPyQaHEV2WL8rGUs41oMICtYfNkphl",
           menuCategoryId: combosCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
           ingredients: [
             "Pão tipo brioche",
             "Hambúrguer de carne 100% bovina",
@@ -75,7 +75,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQr12aTqPo3SsGjBJCaM7yhxnbDlXeL5N9dckv",
           menuCategoryId: combosCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
           ingredients: [
             "Pão tipo brioche",
             "Batata",
@@ -95,7 +95,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQWdq0w8niS9XCLQu7Nb4jvBYZze16goaOqsKR",
           menuCategoryId: combosCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
           ingredients: [
             "Pão escuro com gergelim",
             "Hambúrguer de carne 100% bovina",
@@ -108,7 +108,7 @@ const main = async () => {
     const hamburguersCategory = await tx.menuCategory.create({
       data: {
         name: "Lanches",
-        restaurantId: restaurant.id,
+        storeId: store.id,
       },
     });
     await tx.product.createMany({
@@ -130,7 +130,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQKfI6fivqActTvBGLXfQe4a8CJ6d3HiR7USPK",
           menuCategoryId: hamburguersCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
         {
           name: "Duplo Quarterão",
@@ -150,7 +150,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ99rtECuYaDgmA4VujBU0wKn2ThXJvF3LHfyc",
           menuCategoryId: hamburguersCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
         {
           name: "McMelt",
@@ -170,7 +170,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQUY0VlDTmvPeJLoyOjzNsMqFdxUI423nBl6br",
           menuCategoryId: hamburguersCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
         {
           name: "McNífico Bacon",
@@ -186,14 +186,14 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQBBmifbjzEVXRoycAtrP9vH45bZ6WDl3QF0a1",
           menuCategoryId: hamburguersCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
       ],
     });
     const frenchFriesCategory = await tx.menuCategory.create({
       data: {
         name: "Fritas",
-        restaurantId: restaurant.id,
+        storeId: store.id,
       },
     });
     await tx.product.createMany({
@@ -206,7 +206,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQNd3jSNrcJroaszwjUAlM6iSO5ZTx2HV70t31",
           menuCategoryId: frenchFriesCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
         {
           name: "Fritas Média",
@@ -217,7 +217,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7Y6lv9tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
           menuCategoryId: frenchFriesCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
         {
           name: "Fritas Pequena",
@@ -228,14 +228,14 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ5toOZxYa1oARJCUGh4EY3x8NjXHtvZ7lnVfw",
           menuCategoryId: frenchFriesCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
       ],
     });
     const drinksCategory = await tx.menuCategory.create({
       data: {
         name: "Bebidas",
-        restaurantId: restaurant.id,
+        storeId: store.id,
       },
     });
     await tx.product.createMany({
@@ -248,7 +248,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQJS1b33q29eEsh0CVmOywrqx1UPnJpRGcHN5v",
           menuCategoryId: drinksCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
         {
           name: "Fanta Laranja",
@@ -258,7 +258,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQW7Kxm9gniS9XCLQu7Nb4jvBYZze16goaOqsK",
           menuCategoryId: drinksCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
         {
           name: "Água Mineral",
@@ -268,14 +268,14 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ7i05S5tkc0L9oMIXZsFJtwnBh2KCz3y6uSW1",
           menuCategoryId: drinksCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
       ],
     });
     const dessertsCategory = await tx.menuCategory.create({
       data: {
         name: "Sobremesas",
-        restaurantId: restaurant.id,
+        storeId: store.id,
       },
     });
     await tx.product.createMany({
@@ -288,7 +288,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQtfuQrAKkI75oJfPT0crZxvX82ui9qV3hLFdY",
           menuCategoryId: dessertsCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
         {
           name: "Casquinha de Chocolate",
@@ -298,7 +298,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQBH21ijzEVXRoycAtrP9vH45bZ6WDl3QF0a1M",
           menuCategoryId: dessertsCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
         {
           name: "Casquinha de Mista",
@@ -308,7 +308,7 @@ const main = async () => {
           imageUrl:
             "https://u9a6wmr3as.ufs.sh/f/jppBrbk0cChQ4rBrtULypXmR6JiWuhzS8ALjVkrF3yfatC7E",
           menuCategoryId: dessertsCategory.id,
-          restaurantId: restaurant.id,
+          storeId: store.id,
         },
       ],
     });
