@@ -32,8 +32,8 @@ interface OrderListProps {
 
 const getStatusLabel = (status: OrderStatus) => {
   if (status === "FINISHED") return "Finalizado";
-  if (status === "IN_PREPARATION") return "Em preparo";
-  if (status === "PENDING") return "Pendente";
+  if (status === "IN_PREPARATION") return "En preparación";
+  if (status === "PENDING") return "Pendiente";
   return "";
 };
 
@@ -52,7 +52,7 @@ const OrderList = ({ orders }: OrderListProps) => {
       </Button>
       <div className="flex items-center gap-3">
         <ScrollTextIcon />
-        <h2 className="text-lg font-semibold">Meus Pedidos</h2>
+        <h2 className="text-lg font-semibold">Mis pedidos</h2>
       </div>
       {orders.map((order) => (
         <Card key={order.id}>

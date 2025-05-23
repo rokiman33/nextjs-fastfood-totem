@@ -38,13 +38,13 @@ import { isValidCpf } from "../helpers/cpf";
 
 const formSchema = z.object({
   name: z.string().trim().min(1, {
-    message: "O nome é obrigatório.",
+    message: "El nombre es obligatorio.",
   }),
   cpf: z
     .string()
     .trim()
     .min(1, {
-      message: "O CPF é obrigatório.",
+      message: "El CPF es obligatorio.",
     })
     .refine((value) => isValidCpf(value), {
       message: "CPF inválido.",
@@ -85,7 +85,7 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
           slug,
         });
         onOpenChange(false);
-        toast.success("Pedido finalizado com sucesso!");
+        toast.success("¡Pedido finalizado con éxito!");
       })
      
   
@@ -99,9 +99,9 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
       <DrawerTrigger asChild></DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Finalizar Pedido</DrawerTitle>
+          <DrawerTitle>Finalizar pedido</DrawerTitle>
           <DrawerDescription>
-            Insira suas informações abaixo para finalizar o seu pedido.
+            Ingrese su información a continuación para finalizar su pedido.
           </DrawerDescription>
         </DrawerHeader>
         <div className="p-5">
@@ -112,9 +112,9 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                 name="name"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Seu nome</FormLabel>
+                    <FormLabel>Su nombre</FormLabel>
                     <FormControl>
-                      <Input placeholder="Digite seu nome..." {...field} />
+                      <Input placeholder="Escriba su nombre..." {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -125,10 +125,10 @@ const FinishOrderDialog = ({ open, onOpenChange }: FinishOrderDialogProps) => {
                 name="cpf"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>Seu CPF</FormLabel>
+                    <FormLabel>Su CPF</FormLabel>
                     <FormControl>
                       <PatternFormat
-                        placeholder="Digite seu CPF..."
+                        placeholder="Escriba su CPF..."
                         format="###.###.###-##"
                         customInput={Input}
                         {...field}

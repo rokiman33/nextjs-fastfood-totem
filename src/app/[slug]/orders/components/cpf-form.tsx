@@ -33,7 +33,7 @@ const formSchema = z.object({
     .string()
     .trim()
     .min(1, {
-      message: "O CPF é obrigatório.",
+      message: "El CPF es obligatorio.",
     })
     .refine((value) => isValidCpf(value), {
       message: "CPF inválido.",
@@ -58,9 +58,9 @@ const CpfForm = () => {
     <Drawer open>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle>Visualizar Pedidos</DrawerTitle>
+          <DrawerTitle>Ver pedidos</DrawerTitle>
           <DrawerDescription>
-            Insira seu CPF abaixo para visualizar seus pedidos.
+            Ingrese su CPF abajo para ver sus pedidos.
           </DrawerDescription>
         </DrawerHeader>
 
@@ -71,10 +71,10 @@ const CpfForm = () => {
               name="cpf"
               render={({ field }) => (
                 <FormItem className="px-4">
-                  <FormLabel>Seu CPF</FormLabel>
+                  <FormLabel>Su CPF</FormLabel>
                   <FormControl>
                     <PatternFormat
-                      placeholder="Digite seu CPF..."
+                      placeholder="Escriba su CPF..."
                       format="###.###.###-##"
                       customInput={Input}
                       {...field}
