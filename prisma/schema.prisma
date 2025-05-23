@@ -43,7 +43,7 @@ model Product {
   description    String
   price          Float
   imageUrl       String
-  ingredients   String []
+  details       String[]
   restaurant     Restaurant     @relation(fields: [restaurantId], references: [id], onDelete: Cascade)
   restaurantId   String
   menuCategory   MenuCategory   @relation(fields: [menuCategoryId], references: [id], onDelete: Cascade)
