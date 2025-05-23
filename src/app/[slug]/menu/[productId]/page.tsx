@@ -12,8 +12,6 @@ interface ProductPageProps {
 const ProductPage = async ({ params }: ProductPageProps) => {
   const { slug, productId } = await params;
 
-  console.log(productId); // Debug para verificar se o ID está correto
-
   const product = await db.product.findUnique({
     where: { id: productId },
     include: {
@@ -27,7 +25,6 @@ const ProductPage = async ({ params }: ProductPageProps) => {
     },
   });
 
-  console.log(product?.name)
 
   if (!product) {
     return notFound();
