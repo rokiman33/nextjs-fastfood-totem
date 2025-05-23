@@ -109,11 +109,11 @@ const ProductDetails = ({ product }: ProductDetailsProps) => {
 
             {/* INGREDIENTS */}
             <div className="mt-6 space-y-3">
-              <div className="5 flex items-center gap-1">
+              <div className="flex items-center gap-1">
                 <ChefHatIcon size={18} />
                 <h4 className="font-semibold">Ingredientes</h4>
               </div>
-              <ul className="text-muted-fo list-disc px-5 text-sm text-muted-foreground">
+              <ul className="list-disc px-5 text-sm text-muted-foreground">
                 {product.ingredients.map((ingredient) => (
                   <li key={ingredient}>{ingredient}</li>
                 ))}
